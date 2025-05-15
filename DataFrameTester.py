@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+import matplotlib as mt
+
 
 data = {
     'Fruit': ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry'],
