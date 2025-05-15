@@ -8,4 +8,12 @@ data = {
 }
 df = pd.DataFrame(data)
 
+#st.dataframe(df)
+
+st.markdown("""
+<style>
+table {background-color: #f0f0f0;}
+</style>
+""", unsafe_allow_html=True)
 st.dataframe(df)
+
