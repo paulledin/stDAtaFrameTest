@@ -10,6 +10,8 @@ df = pd.DataFrame(data)
 
 #st.dataframe(df)
 
+st.dataframe(df.style.background_gradient(cmap='Blues'))
+
 st.markdown("""
 <style>
 table {background-color: #f0f0f0;}
