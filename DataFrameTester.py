@@ -1,23 +1,23 @@
-import streamlit as st
 import pandas as pd
-import matplotlib 
+import streamlit as st
 
+data_df = pd.DataFrame(
+    {
+        "price": [20, 950, 250, 500],
+    }
+)
 
-data = {
-    'Fruit': ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry'],
-    'Quantity': [10, 15, 20, 25, 30],
-    'Price': [0.5, 0.25, 0.75, 1.0, 2.0]
-}
-df = pd.DataFrame(data)
-
-#st.dataframe(df)
-
-st.dataframe(df.style.background_gradient(cmap='Blues'))
-
-st.markdown("""
-<style>
-table {background-color: #f0f0f0;}
-</style>
-""", unsafe_allow_html=True)
-st.dataframe(df)
-
+st.data_editor(
+    data_df,
+    column_config={
+        "price": st.column_config.NumberColumn(
+            "Price (in USD)",
+            help="The price of the product in USD",
+            min_value=0,
+            max_value=1000,
+            step=1,
+            format="$%d",
+        )
+    },
+    hide_index=True,
+)
